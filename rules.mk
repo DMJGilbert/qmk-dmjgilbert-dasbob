@@ -1,5 +1,17 @@
+# MCU name
+MCU = RP2040
+
 # Bootloader selection
 BOOTLOADER = rp2040
+
+ALLOW_WARNINGS = yes
+
+# LTO must be disabled for RP2040 builds
+LTO_ENABLE = no
+
+# PIO serial/WS2812 drivers must be used on RP2040
+SERIAL_DRIVER = vendor
+WS2812_DRIVER = vendor
 
 # Build Options
 #   change yes to no to disable
@@ -15,8 +27,7 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 UNICODE_ENABLE = yes        # Unicode
 AUDIO_ENABLE = no           # Audio output
 SPLIT_KEYBOARD = yes        # Use shared split_common code
-OLED_ENABLE = yes
-OLED_DRIVER = SSD1306
-WPM_ENABLE = yes
-LTO_ENABLE = yes
-SERIAL_DRIVER = vendor
+SWAP_HANDS_ENABLE = yes
+# OLED_ENABLE = yes
+# OLED_DRIVER = SSD1306
+# WPM_ENABLE = yes
