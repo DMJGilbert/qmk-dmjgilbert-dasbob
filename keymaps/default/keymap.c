@@ -4,6 +4,7 @@
 #define LY1_ETR LT(1, KC_ENTER)       // Layer one when held, enter when tapped
 #define LY2_ESC LT(2, KC_ESCAPE)      // Layer two when held, esc when tapped
 #define LT_BSPC MT(MOD_RSFT, KC_BSPC) // Right shift when held, backspace when tapped
+#define LCT_DOT MT(MOD_RCTL, KC_DOT)  //
 
 #define WIN_MOV HYPR(KC_M) //
 #define WIN_RSZ HYPR(KC_R) //
@@ -17,11 +18,7 @@
 
 #define WIN_FUL HYPR(KC_F) //
 
-enum dasbob_layers {
-  _DAZMAK,
-  _SYMBOL,
-  _NAVIG
-};
+enum dasbob_layers { _DAZMAK, _SYMBOL, _NAVIG };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -31,10 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
                KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                         KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
         //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-               KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M,    KC_W, KC_COMM,  KC_DOT,
+               KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M,    KC_W, KC_COMM, LCT_DOT,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                     KC_LGUI, LY1_ETR,  KC_SPC,    LT_BSPC, LY2_ESC, KC_RCTL
-                                 //`--------------------------'  `--------------------------'
+                                       KC_LGUI, LY1_ETR,  KC_SPC,    LT_BSPC, LY2_ESC, XXXXXXX
+                                   //`--------------------------'  `--------------------------'
     ),
 
     [_SYMBOL] = LAYOUT_split_3x5_3(
